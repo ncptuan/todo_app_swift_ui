@@ -18,9 +18,9 @@ struct ContentView: View {
     
     var themes: [Theme] = themeData
     var dataList: [String] = [
-    
     ];
     @State private var showingAddTodoView: Bool = false
+    @StateObject private var viewModel = TaskViewModel()
     
     var body: some View {
         NavigationView{
@@ -56,56 +56,91 @@ struct ContentView: View {
                     
                     Spacer()
                     
-                    EmptyListView()
-                        .padding(.horizontal)
+                    if viewModel.isLoading {
+                        ProgressView()
+                        
+                    } else if let errorMessage = viewModel.errorMessage {
+                            EmptyListView(
+                                screenPadding: EdgeInsets(
+                                    top: 0,
+                                    leading: 16,
+                                    bottom: 0,
+                                    trailing: 16
+                                )
+                            )
+                    } else {
+                        Text("Ra data")
+//                        List(viewModel.tasks) { task in
+//                            VStack(alignment: .leading) {
+//                                Text(task.title)
+//                                    .font(.headline)
+//                            }
+//                        }
+                    }
+                    
+                    
+                    
                     
                     Spacer()
                 }
             }
             .sheet(isPresented: $showingAddTodoView) {
                 AddTaskView().environment(\.managedObjectContext, self.managedObjectContext)
-              }
+            }
             .overlay(
-              ZStack {
-                Group {
-                  Circle()
-                    .fill(themes[self.theme.themeSettings].themeColor)
-                    .opacity( 0.2 )
-                    //.scaleEffect(self.animatingButton ? 1 : 0)
-                    .frame(width: 68, height: 68, alignment: .center)
-                  Circle()
-                    .fill(themes[self.theme.themeSettings].themeColor)
-                    .opacity( 0)
-                    //.scaleEffect(self.animatingButton ? 1 : 0)
-                    .frame(width: 88, height: 88, alignment: .center)
-                }
-                //.animation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true))
-                
-                Button(action: {
-                  self.showingAddTodoView.toggle()
-                }) {
-                  Image(systemName: "plus.circle.fill")
-                    .resizable()
-                    .scaledToFit()
-                    .background(Circle().fill(Color("ColorBase")))
-                    .frame(width: 48, height: 48, alignment: .center)
-                } //: BUTTON
-                  .accentColor(themes[self.theme.themeSettings].themeColor)
-                  .onAppear(perform: {
-//                     self.animatingButton.toggle()
-                  })
-              } //: ZSTACK
-                .padding(.bottom, 15)
-                .padding(.trailing, 15)
+                ZStack {
+                    Group {
+                        Circle()
+                            .fill(themes[self.theme.themeSettings].themeColor)
+                            .opacity( 0.2 )
+                        //.scaleEffect(self.animatingButton ? 1 : 0)
+                            .frame(width: 68, height: 68, alignment: .center)
+                        Circle()
+                            .fill(themes[self.theme.themeSettings].themeColor)
+                            .opacity( 0.15)
+                        //.scaleEffect(self.animatingButton ? 1 : 0)
+                            .frame(width: 88, height: 88, alignment: .center)
+                    }
+                    //.animation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true))
+                    
+                    Button(action: {
+                        self.showingAddTodoView.toggle()
+                    }) {
+                        Image(systemName: "plus.circle.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 48, height: 48, alignment: .center)
+                            .background(Circle().fill(Color("ColorBase")))
+                           
+                    } //: BUTTON
+                    .accentColor(themes[self.theme.themeSettings].themeColor)
+                    .onAppear(perform: {
+                        //                     self.animatingButton.toggle()
+                    })
+                } //: ZSTACK
+                    .padding(.bottom, 15)
+                    .padding(.trailing, 15)
                 , alignment: .bottomTrailing
             )
+            .onAppear(perform: {
+                viewModel.fetchTasks()
+            })
         }
-
+        
     }
 }
 
-#Preview {
-    ContentView()
-}
+//#Preview {
+////    static var previews: some View {
+////            ContentView()
+////        }
+//    ContentView()
+//}
 
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
 

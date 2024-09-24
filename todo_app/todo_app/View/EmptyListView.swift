@@ -10,6 +10,9 @@ import SwiftUI
 
 
 struct EmptyListView: View {
+    
+    var screenPadding: EdgeInsets?;
+    
     let images: [String] = [
       "illustration-no1",
       "illustration-no2",
@@ -41,10 +44,12 @@ struct EmptyListView: View {
                     .font(.system(.headline, design: .rounded))
                     .foregroundColor(themes[self.theme.themeSettings].themeColor)
             }
+            .padding(screenPadding ?? EdgeInsets())
+           
         }
     }
 }
 
 #Preview {
-    EmptyListView()
+    EmptyListView(screenPadding: EdgeInsets())
 }
