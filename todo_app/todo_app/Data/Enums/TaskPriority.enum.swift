@@ -10,9 +10,27 @@ import Foundation
 import SwiftUI
 
 
-enum TaskPriority: Int, Decodable {
-    case low = 1
+enum TaskPriority:  Decodable {
+    case low
     case medium
     case high
+    case unknown(String)
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        let rawValue = try container.decode(String.self)
+        
+        switch rawValue.lowercased() {
+        case "low":
+            self = .low
+        case "medium":
+            self = .medium
+        case "high":
+            self = .high
+       
+        default:
+            self = .unknown(rawValue)
+        }
+    }
 }
 
