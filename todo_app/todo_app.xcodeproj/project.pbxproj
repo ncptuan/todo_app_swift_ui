@@ -11,9 +11,13 @@
 		0404D0DD2CA273760044985A /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0404D0DC2CA273760044985A /* TaskModel.swift */; };
 		0404D0E12CA29E770044985A /* TaskPriority.enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0404D0E02CA29E770044985A /* TaskPriority.enum.swift */; };
 		0404D0E32CA29EAE0044985A /* TaskStatus.enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0404D0E22CA29EAE0044985A /* TaskStatus.enum.swift */; };
-		0404D0E62CA2A00F0044985A /* NetWorkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0404D0E52CA2A00F0044985A /* NetWorkManager.swift */; };
-		0404D0E92CA2A13E0044985A /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0404D0E82CA2A13E0044985A /* AppEnvironment.swift */; };
+		0404D0E62CA2A00F0044985A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0404D0E52CA2A00F0044985A /* NetworkManager.swift */; };
 		0404D0EB2CA2A38F0044985A /* AppEnvironment.enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0404D0EA2CA2A38F0044985A /* AppEnvironment.enum.swift */; };
+		0448C0022CA5166000CA963D /* NetworkInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448C0012CA5166000CA963D /* NetworkInterceptor.swift */; };
+		0448C0042CA5565300CA963D /* TaskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448C0032CA5565300CA963D /* TaskService.swift */; };
+		0448C0062CA5568300CA963D /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448C0052CA5568300CA963D /* APIEndpoints.swift */; };
+		0448C0082CA556DD00CA963D /* URLSessionConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448C0072CA556DD00CA963D /* URLSessionConfiguration.swift */; };
+		0448C00B2CA558B300CA963D /* CreateTaskRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448C00A2CA558B300CA963D /* CreateTaskRequest.swift */; };
 		04973E342CA150560087F9DF /* todo_appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04973E332CA150560087F9DF /* todo_appApp.swift */; };
 		04973E362CA150560087F9DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04973E352CA150560087F9DF /* ContentView.swift */; };
 		04973E3B2CA150580087F9DF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04973E3A2CA150580087F9DF /* Preview Assets.xcassets */; };
@@ -23,6 +27,7 @@
 		04973E4B2CA1557D0087F9DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04973E4A2CA1557D0087F9DF /* Assets.xcassets */; };
 		04973E582CA160F70087F9DF /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04973E572CA160F70087F9DF /* EmptyListView.swift */; };
 		04973E5D2CA1B7830087F9DF /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04973E5C2CA1B7830087F9DF /* AddTaskView.swift */; };
+		04B4C80E2CA3FB020065490F /* RowTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B4C80D2CA3FB020065490F /* RowTaskView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,9 +35,13 @@
 		0404D0DC2CA273760044985A /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		0404D0E02CA29E770044985A /* TaskPriority.enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskPriority.enum.swift; sourceTree = "<group>"; };
 		0404D0E22CA29EAE0044985A /* TaskStatus.enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStatus.enum.swift; sourceTree = "<group>"; };
-		0404D0E52CA2A00F0044985A /* NetWorkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkManager.swift; sourceTree = "<group>"; };
-		0404D0E82CA2A13E0044985A /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		0404D0E52CA2A00F0044985A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		0404D0EA2CA2A38F0044985A /* AppEnvironment.enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.enum.swift; sourceTree = "<group>"; };
+		0448C0012CA5166000CA963D /* NetworkInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInterceptor.swift; sourceTree = "<group>"; };
+		0448C0032CA5565300CA963D /* TaskService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskService.swift; sourceTree = "<group>"; };
+		0448C0052CA5568300CA963D /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
+		0448C0072CA556DD00CA963D /* URLSessionConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionConfiguration.swift; sourceTree = "<group>"; };
+		0448C00A2CA558B300CA963D /* CreateTaskRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTaskRequest.swift; sourceTree = "<group>"; };
 		04973E302CA150560087F9DF /* todo_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = todo_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04973E332CA150560087F9DF /* todo_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todo_appApp.swift; sourceTree = "<group>"; };
 		04973E352CA150560087F9DF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -43,6 +52,7 @@
 		04973E4A2CA1557D0087F9DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04973E572CA160F70087F9DF /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListView.swift; sourceTree = "<group>"; };
 		04973E5C2CA1B7830087F9DF /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
+		04B4C80D2CA3FB020065490F /* RowTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowTaskView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +77,7 @@
 		0404D0DE2CA29E270044985A /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				0448C0092CA5589E00CA963D /* RequestModel */,
 				0404D0DF2CA29E310044985A /* Enums */,
 				0404D0DB2CA273630044985A /* Models */,
 			);
@@ -86,7 +97,10 @@
 		0404D0E42CA29FDD0044985A /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				0404D0E52CA2A00F0044985A /* NetWorkManager.swift */,
+				0404D0E52CA2A00F0044985A /* NetworkManager.swift */,
+				0448C0012CA5166000CA963D /* NetworkInterceptor.swift */,
+				0448C0052CA5568300CA963D /* APIEndpoints.swift */,
+				0448C0072CA556DD00CA963D /* URLSessionConfiguration.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -94,9 +108,24 @@
 		0404D0E72CA2A1290044985A /* Contants */ = {
 			isa = PBXGroup;
 			children = (
-				0404D0E82CA2A13E0044985A /* AppEnvironment.swift */,
 			);
 			path = Contants;
+			sourceTree = "<group>";
+		};
+		0448C0092CA5589E00CA963D /* RequestModel */ = {
+			isa = PBXGroup;
+			children = (
+				0448C00A2CA558B300CA963D /* CreateTaskRequest.swift */,
+			);
+			path = RequestModel;
+			sourceTree = "<group>";
+		};
+		0448C00C2CA566D000CA963D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0448C0032CA5565300CA963D /* TaskService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		04973E272CA150560087F9DF = {
@@ -118,6 +147,7 @@
 		04973E322CA150560087F9DF /* todo_app */ = {
 			isa = PBXGroup;
 			children = (
+				0448C00C2CA566D000CA963D /* Services */,
 				0404D0E72CA2A1290044985A /* Contants */,
 				0404D0E42CA29FDD0044985A /* Network */,
 				0404D0DE2CA29E270044985A /* Data */,
@@ -155,6 +185,7 @@
 				04973E352CA150560087F9DF /* ContentView.swift */,
 				04973E572CA160F70087F9DF /* EmptyListView.swift */,
 				04973E5C2CA1B7830087F9DF /* AddTaskView.swift */,
+				04B4C80D2CA3FB020065490F /* RowTaskView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -238,16 +269,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				0404D0E12CA29E770044985A /* TaskPriority.enum.swift in Sources */,
+				0448C0042CA5565300CA963D /* TaskService.swift in Sources */,
 				04973E432CA151E80087F9DF /* ThemeModel.swift in Sources */,
+				0448C0062CA5568300CA963D /* APIEndpoints.swift in Sources */,
 				04973E5D2CA1B7830087F9DF /* AddTaskView.swift in Sources */,
+				04B4C80E2CA3FB020065490F /* RowTaskView.swift in Sources */,
+				0448C0082CA556DD00CA963D /* URLSessionConfiguration.swift in Sources */,
 				0404D0EB2CA2A38F0044985A /* AppEnvironment.enum.swift in Sources */,
 				04973E362CA150560087F9DF /* ContentView.swift in Sources */,
 				0404D0DD2CA273760044985A /* TaskModel.swift in Sources */,
 				04973E472CA152C90087F9DF /* ThemeSettings.swift in Sources */,
 				04973E342CA150560087F9DF /* todo_appApp.swift in Sources */,
 				0404D0DA2CA2711E0044985A /* TaskViewModel.swift in Sources */,
-				0404D0E92CA2A13E0044985A /* AppEnvironment.swift in Sources */,
-				0404D0E62CA2A00F0044985A /* NetWorkManager.swift in Sources */,
+				0448C00B2CA558B300CA963D /* CreateTaskRequest.swift in Sources */,
+				0404D0E62CA2A00F0044985A /* NetworkManager.swift in Sources */,
+				0448C0022CA5166000CA963D /* NetworkInterceptor.swift in Sources */,
 				0404D0E32CA29EAE0044985A /* TaskStatus.enum.swift in Sources */,
 				04973E452CA1521E0087F9DF /* ThemeData.swift in Sources */,
 				04973E582CA160F70087F9DF /* EmptyListView.swift in Sources */,

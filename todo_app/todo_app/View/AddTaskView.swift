@@ -9,6 +9,9 @@ import SwiftUI
 
 struct AddTaskView: View {
     
+    
+    @Environment(\.presentationMode) var presentationMode
+    
     @State private var name: String = ""
     @State private var priority: String = "Medium"
     
@@ -61,6 +64,7 @@ struct AddTaskView: View {
             
             .navigationBarTitle("Add task", displayMode: .inline)
             .navigationBarItems( trailing: Button(action: {
+                self.presentationMode.wrappedValue.dismiss()
             }){
                 Image(systemName: "xmark")
             }

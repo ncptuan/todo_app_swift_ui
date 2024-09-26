@@ -13,6 +13,7 @@ enum TaskStatus: Decodable {
     case done
     case unknown(String)
     
+    
     init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
         let rawValue = try container.decode(String.self)
@@ -27,6 +28,19 @@ enum TaskStatus: Decodable {
        
         default:
             self = .unknown(rawValue)
+        }
+    }
+    
+    var displayName: String {
+        switch self {
+        case .open:
+            return "Open"
+        case .inProgress:
+            return "In progress"
+        case .done:
+            return "Done"
+        case .unknown:
+            return "Unknown"
         }
     }
 }

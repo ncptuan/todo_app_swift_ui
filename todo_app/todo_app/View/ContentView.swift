@@ -17,11 +17,9 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     
     var themes: [Theme] = themeData
-    var dataList: [String] = [
-    ];
     @State private var showingAddTodoView: Bool = false
     @StateObject private var viewModel = TaskViewModel()
-    
+//    var taskList: [Task] = viewModel.tasks;
     var body: some View {
         NavigationView{
             ZStack {
@@ -59,7 +57,7 @@ struct ContentView: View {
                     if viewModel.isLoading {
                         ProgressView()
                         
-                    } else if let errorMessage = viewModel.errorMessage {
+                    } else if viewModel.errorMessage != nil {
                             EmptyListView(
                                 screenPadding: EdgeInsets(
                                     top: 0,
@@ -69,17 +67,22 @@ struct ContentView: View {
                                 )
                             )
                     } else {
-                        Text("Ra data")
-//                        List(viewModel.tasks) { task in
-//                            VStack(alignment: .leading) {
-//                                Text(task.title)
-//                                    .font(.headline)
-//                            }
-//                        }
+                        
+                        if(viewModel.tasks.isEmpty) {EmptyListView(
+                            screenPadding: EdgeInsets(
+                                top: 0,
+                                leading: 16,
+                                bottom: 0,
+                                trailing: 16
+                            )
+                        )} else
+                        {
+                            List(viewModel.tasks, id: \.id) { task in
+                                RowTaskView(title: task.title, subTitle: task.status?.displayName)
+                                    .padding(.vertical, 1)
+                            }
+                        }
                     }
-                    
-                    
-                    
                     
                     Spacer()
                 }
